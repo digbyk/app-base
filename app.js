@@ -27,12 +27,8 @@ app.use(session({
 	saveUninitialized: false
 }));
 
-app.get('/', function (req, res) {
-	//res.send('Hello Worlds!');
-	res.render("index", {
-		user: 'digby'
-	});
-});
+var routes = require('./routes/index.js');
+app.use('/', routes);
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
