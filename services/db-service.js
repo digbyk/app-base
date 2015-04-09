@@ -16,7 +16,7 @@ db.once('open', function (callback) {
 
 module.exports.getData = function (callback) {
 	Test.findOne(function (err, data) {
-		if (err) return console.error(err);
-		callback(data);
+		if (err) callback(err, null);
+		callback(null, data);
 	});
 }
