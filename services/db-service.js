@@ -8,10 +8,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
 	console.log('Database ready for connections');
-	var t = new Test({
-		name: 'banana'
-	});
-	t.save();
 });
 
 module.exports.getData = function (callback) {
