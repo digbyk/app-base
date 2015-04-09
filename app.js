@@ -27,7 +27,7 @@ app.use(session({
 	saveUninitialized: false
 }));
 
-var routes = require('./routes/index.js');
+var routes = require('./routes/index.js')();
 app.use('/', routes);
 
 var server_port = process.env.port || process.env.OPENSHIFT_NODEJS_PORT || 3000;
