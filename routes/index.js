@@ -5,9 +5,9 @@ var dbService = require('../services/db-service.js');
 
 module.exports = function () {
 	router.get('/', function (req, res) {
-		dbService.getData(function (name) {
+		dbService.getData(function (data) {
 			res.render("index", {
-				user: name
+				user: data.name
 			});
 		});
 	});

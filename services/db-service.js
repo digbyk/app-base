@@ -14,10 +14,9 @@ db.once('open', function (callback) {
 	t.save();
 });
 
-module.exports.getData = function (cb) {
-	Test.findOne(function (err, name) {
+module.exports.getData = function (callback) {
+	Test.findOne(function (err, data) {
 		if (err) return console.error(err);
-		console.log(name);
-		cb(name.name);
+		callback(data);
 	});
 }
