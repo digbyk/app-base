@@ -1,0 +1,37 @@
+doctype html
+html
+	head
+		title= 'Guildmania'
+		link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/normalize.min.css')
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600')
+		link(rel='stylesheet', href='/stylesheets/bootstrap-override.css')
+		link(rel='stylesheet', href='/stylesheets/guildmania.css')
+		meta(name='description', content='A World of Warcraft guild site')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name="theme-color" content="#db5945")
+	body
+		.container-fluid.container-main
+			.background
+				.container
+					//include ./partials/nav
+				hr
+				.container
+					.row
+						//div(class=".col-md-12 banner")
+							//script(async, src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+							//ins(class="adsbygoogle", style="display:block", data-ad-client="ca-pub-0790986216998660", data-ad-slot="2397097287", data-ad-format="auto")
+							//script.
+							//	(adsbygoogle = window.adsbygoogle || []).push({});
+				.container.main
+					block content
+				hr
+				.container
+					//include ./partials/footer
+		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+		script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/js/jquery.tablesorter.min.js')
+		script(src='//static.wowhead.com/widgets/power.js')
+		script(src='/javascripts/application.js')
+

@@ -1,1 +1,9 @@
-p Hello there #{user}. How are you?
+extends layout
+
+block content
+	.row.home
+		.col-md-3.col-md-push-3
+			.block
+		.col-md-3.col-md-push-3
+			.block #{region}
+			p Hello there #{user}. How are you?
