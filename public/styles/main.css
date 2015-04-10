@@ -22,7 +22,6 @@ body {
   z-index: -1;
   display: block;
   height: 100%;
-  background: url(../images/wod-bg.jpg) no-repeat center center fixed;
   background-size: cover;
   -webkit-filter: blur(3px) brightness(0.2) grayscale(0.3) sepia(0.5);
   filter: blur(3px) brightness(0.2) grayscale(0.3);
