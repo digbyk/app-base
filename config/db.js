@@ -1,5 +1,8 @@
+var config = require('cloud-env');
+
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://mongo:mongo@ds061691.mongolab.com:61691/testdb');
+var mongoUrl = config.get('MONGODB_DB_URL');
+mongoose.connect(mongoUrl);
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
