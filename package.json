@@ -42,6 +42,6 @@
 	"private": true,
 	"main": "app.js",
 	"scripts": {
-		"start": "nodemon -w app.js"
+		"start": "nodemon app.js"
 	}
 }

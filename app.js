@@ -10,6 +10,8 @@ var session = require('express-session');
 
 var app = express();
 
+require('./config/db.js');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
