@@ -1,5 +1,3 @@
-var config = require('cloud-env');
-
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -34,12 +32,9 @@ app.use(session({
 var routes = require('./routes/index.js')();
 app.use('/', routes);
 
-var port = config.get('PORT', 3000);
-var bind_address = config.get('IP', '127.0.0.1');
+var host = process.env.NODE_HOST || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.NODE_PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
-var server_port = process.env.port || process.env.OPENSHIFT_NODEJS_PORT || 3000;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-
-app.listen(port, bind_address, function () {
-	console.log("Listening on " + server_ip_address + ":" + server_port)
+app.listen(port, host, function () {
+	console.log("Listening on " + host + ":" + port)
 });
