@@ -1,5 +1,5 @@
 {
 	"verbose": true,
-	"ignore": ["GruntFile.js", "*.json", "*.jade", "*.less", "*.css"],
+	"ignore": ["GruntFile.js", "*.json", "*.jade", "*.less", "*.css", "git/**"],
 	"execMap": {}
 }
