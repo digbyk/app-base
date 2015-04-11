@@ -1,7 +1,7 @@
 {
-	"name": "openshift-test-app",
-	"version": "1.0.0",
-	"description": "OpenShift Test Application",
+	"name": "digby-template",
+	"version": "0.1.0",
+	"description": "Templare for standard application",
 	"keywords": [],
 	"author": {
 		"name": "Digby Knight",
