@@ -1,3 +1,5 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+This is my template for new project. Not quite MEAN, but Node, Express and Mongo.
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+All ready for OpenShift deployment too.
+
+Uses Grunt for Less compilation.
