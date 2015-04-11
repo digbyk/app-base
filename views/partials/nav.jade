@@ -1,0 +1,52 @@
+.navbar.navbar-top(role='navigation')
+	.navbar-header
+		button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar
+		a.navbar-brand(href="/")
+			| Guildmania
+	.collapse.navbar-collapse
+		ul.nav.navbar-nav.navbar-right
+			li
+				a(href="/guild")
+					i(class="fa fa-university") &nbsp;
+					span My Guild
+			li
+				a(href="/find")
+					i(class="fa fa-search") &nbsp;
+					span Guild finder
+			li
+				a(href="/create")
+					i(class="fa fa-shield") &nbsp;
+					span Create
+			li
+				a(href="/join")
+					i(class="fa fa-smile-o") &nbsp;
+					span Join
+			if user
+				li
+					a(href="/profile")
+						i(class="fa fa-cog") &nbsp;
+						span= user.battletag
+				li
+					a(href="/auth/logout")
+						i(class="fa fa-sign-out") &nbsp;
+						span Logout
+			if !user
+				li
+					form.navbar-form(action="/auth/bnet", method="get")
+						.input-group
+							select.form-control(name="region", id="region")
+								option(value="eu") EU
+								option(value="us") US
+							span.input-group-btn
+								button.btn.btn-default(type="submit")
+									img.bnet(text="Sign in with Battle.net", src="/images/battlenet.png")
+			li
+				form.navbar-form.navbar-right(role="search")
+					.input-group
+						input.form-control(type="text", placeholder="Search")
+						span.input-group-btn
+							button.btn.btn-default(type="button")
+								i(class="fa fa-search")
