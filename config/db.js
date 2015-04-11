@@ -1,10 +1,8 @@
-var config = require('cloud-env');
-
 var mongoose = require('mongoose');
-var mongoUrl = config.get('MONGODB_DB_URL');
 
-mongoose.connect('mongodb://mongo:mongo@ds061601.mongolab.com:61601/ostest');
-//mongoose.connect(mongoUrl);
+var mongodbUrl = process.env.MONGODB_URL || process.env.OPENSHIFT_MONGODB_DB_URL || 'mongodb://127.0.0.1:27017';
+
+mongoose.connect(mongodbUrl);
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
