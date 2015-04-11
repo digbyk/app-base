@@ -8,7 +8,7 @@
 		"email": "digby@digby.net",
 		"url": "http://www.digby.net"
 	},
-	"homepage": "http://www.openshift.com/",
+	"homepage": "http://www.digby.net/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/openshift/origin-server"
@@ -42,6 +42,6 @@
 	"private": true,
 	"main": "app.js",
 	"scripts": {
-		"start": "nodemon app.js"
+		"start": "nodemon -w **/*.js app.js"
 	}
 }
