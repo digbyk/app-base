@@ -25,10 +25,11 @@ module.exports = function (grunt) {
 			}
 		},
 		gitpush: {
-			openShift: {
+			openshift: {
 				options: {
+					verbose: true,
 					branch: 'test',
-					remote: 'openshift'
+					remote: 'openshift-tst'
 				}
 			}
 		}
