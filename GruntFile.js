@@ -2,6 +2,7 @@ module.exports = function (grunt) {
 	require('jit-grunt')(grunt);
 
 	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 		less: {
 			development: {
 				options: {
@@ -22,8 +23,19 @@ module.exports = function (grunt) {
 					nospawn: true
 				}
 			}
+		},
+		gitpush: {
+			openShift: {
+				options: {
+					branch: 'test',
+					remote: 'openshift'
+				}
+			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-git');
+
+	grunt.registerTask('pushOpenshift', ['gitpush']);
 	grunt.registerTask('default', ['less']);
 };
