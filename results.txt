@@ -1,0 +1,15 @@
+
+
+  DBService
+    #getData()
+      √ should save without error (454ms)
+    #doSomething()
+      √ should return okay
+
+  Array
+    #indexOf()
+      √ should return -1 when the value is not present
+
+
+  3 passing (474ms)
+
