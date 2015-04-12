@@ -5,7 +5,9 @@ describe('DBService', function () {
 		it('should save without error', function (done) {
 			require('../config/db.js');
 			var dbService = require('../services/db-service.js');
-			dbService.getData(function (err, data) {});
+			dbService.getData(function (err, data) {
+				expect(data).to.be.okay();
+			});
 			done();
 		})
 	});
