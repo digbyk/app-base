@@ -58,8 +58,8 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('test', ['mochaTest']);
-	grunt.registerTask('openshiftTestDeploy', ['openshift_tst_deploy']);
-	grunt.registerTask('githubPush', ['github_push']);
-	grunt.registerTask('default', ['less']);
+	grunt.registerTask('Run-tests', ['mochaTest']);
+	grunt.registerTask('OpenShift-TestDeploy', ['openshift_tst_deploy']);
+	grunt.registerTask('Github-push', ['github_push']);
+	grunt.registerTask('Compile-less', ['less']);
 };

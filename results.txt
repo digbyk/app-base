@@ -2,7 +2,7 @@
 
   DBService
     #getData()
-      √ should save without error (454ms)
+      √ should save without error (449ms)
     #doSomething()
       √ should return okay
 
@@ -11,5 +11,5 @@
       √ should return -1 when the value is not present
 
 
-  3 passing (474ms)
+  3 passing (471ms)
 
