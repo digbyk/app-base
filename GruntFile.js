@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		gitpush: {
+		openshift_tst_deploy: {
 			openshift: {
 				options: {
 					verbose: true,
@@ -32,11 +32,21 @@ module.exports = function (grunt) {
 					remote: 'openshift-tst'
 				}
 			}
+		},
+		github_push: {
+			github: {
+				options: {
+					verbose: true,
+					branch: 'master',
+					remote: 'GitHub'
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-git');
 
-	grunt.registerTask('pushOpenshift', ['gitpush']);
+	grunt.registerTask('openshiftTestDeploy', ['openshift_tst_deploy']);
+	grunt.registerTask('githubPush', ['github_push']);
 	grunt.registerTask('default', ['less']);
 };
