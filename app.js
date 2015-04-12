@@ -29,7 +29,7 @@ app.use(session({
 	saveUninitialized: false
 }));
 
-var routes = require('./routes/index.js')();
+var routes = require('./routes')();
 app.use('/', routes);
 
 var host = process.env.NODE_HOST || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
