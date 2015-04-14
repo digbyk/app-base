@@ -1,8 +1,22 @@
 module.exports = function (grunt) {
 	require('jit-grunt')(grunt);
 
+	grunt.loadNpmTasks('grunt-git');
+	grunt.loadNpmTasks('grunt-mocha-test');
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		mochaTest: {
+			test: {
+				options: {
+					reporter: 'spec',
+					captureFile: 'results.txt', // Optionally capture the reporter output to a file
+					quiet: false, // Optionally suppress output to standard out (defaults to false)
+					clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
+				},
+				src: ['test/**/*.js']
+			}
+		},
 		less: {
 			development: {
 				options: {
@@ -24,7 +38,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		gitpush: {
+		openshift_tst_deploy: {
 			openshift: {
 				options: {
 					verbose: true,
@@ -32,11 +46,20 @@ module.exports = function (grunt) {
 					remote: 'openshift-tst'
 				}
 			}
+		},
+		gitpush: {
+			github: {
+				options: {
+					verbose: true,
+					branch: 'master',
+					remote: 'GitHub'
+				}
+			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-git');
-
-	grunt.registerTask('pushOpenshift', ['gitpush']);
-	grunt.registerTask('default', ['less']);
+	grunt.registerTask('Run-tests', ['mochaTest']);
+	grunt.registerTask('OpenShift-TestDeploy', ['openshift_tst_deploy']);
+	grunt.registerTask('Github-push', ['gitpush']);
+	grunt.registerTask('Compile-less', ['less']);
 };

@@ -15,7 +15,7 @@ require('./config/db.js');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// app.use(favicon(__dirname + '/public/img/favicon.ico'));
+app.use(favicon(__dirname + '/public/images/battlenet.png'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -29,7 +29,7 @@ app.use(session({
 	saveUninitialized: false
 }));
 
-var routes = require('./routes/index.js')();
+var routes = require('./routes')();
 app.use('/', routes);
 
 var host = process.env.NODE_HOST || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
