@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		github_push: {
+		gitpush: {
 			github: {
 				options: {
 					verbose: true,
@@ -60,6 +60,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('Run-tests', ['mochaTest']);
 	grunt.registerTask('OpenShift-TestDeploy', ['openshift_tst_deploy']);
-	grunt.registerTask('Github-push', ['github_push']);
+	grunt.registerTask('Github-push', ['gitpush']);
 	grunt.registerTask('Compile-less', ['less']);
 };
