@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/digbyk/app-base.svg?branch=staging)](https://travis-ci.org/digbyk/app-base)
+
 This is my template for new project. Not quite MEAN, but Node, Express and Mongo.
 
 All ready for OpenShift deployment too.

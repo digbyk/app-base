@@ -38,28 +38,35 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		openshift_tst_deploy: {
-			openshift: {
-				options: {
-					verbose: true,
-					branch: 'test',
-					remote: 'openshift-tst'
-				}
-			}
-		},
 		gitpush: {
-			github: {
+			master: {
 				options: {
 					verbose: true,
 					branch: 'master',
-					remote: 'GitHub'
+					remote: 'github'
+				}
+			},
+			staging: {
+				options: {
+					verbose: true,
+					branch: 'staging',
+					remote: 'github'
+				}
+			},
+			openshift: {
+				options: {
+					verbose: true,
+					branch: 'staging',
+					remote: 'openshift-tst'
 				}
 			}
 		}
 	});
 
-	grunt.registerTask('Run-tests', ['mochaTest']);
-	grunt.registerTask('OpenShift-TestDeploy', ['openshift_tst_deploy']);
-	grunt.registerTask('Github-push', ['gitpush']);
-	grunt.registerTask('Compile-less', ['less']);
+	grunt.registerTask('run-tests', ['mochaTest']);
+	grunt.registerTask('openshift-test-deploy', ['openshift_tst_deploy']);
+	grunt.registerTask('github-push-master', ['gitpush:master']);
+	grunt.registerTask('github-push-staging', ['gitpush:staging']);
+	grunt.registerTask('github-push-openshift', ['gitpush:openshift']);
+	grunt.registerTask('compile-less', ['less']);
 };
